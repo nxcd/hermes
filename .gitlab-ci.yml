@@ -34,7 +34,7 @@ build:
   }
 
   function version () {
-    echo "$(docker_registry)/nxcd/hermes:$(version_tag $1)"
+    echo "$(docker_registry)/hermes:$(version_tag $1)"
   }
 
   function docker_registry () {
@@ -73,7 +73,7 @@ build:
     fi
 
     echo ${REGISTRY_PASSWORD} | docker login ${REGISTRY_URI} -u ${REGISTRY_USER} --password-stdin
-    docker push "$(docker_registry)/nxcd/hermes"
+    docker push "$(docker_registry)/hermes"
   }
 
 before_script:
