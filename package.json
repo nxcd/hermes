@@ -1,6 +1,6 @@
 {
   "name": "hermes",
-  "version": "5.2.0",
+  "version": "1.0.0",
   "description": "Socket microservice",
   "main": "dist/index.js",
   "scripts": {
