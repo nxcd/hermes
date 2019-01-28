@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 ## Install dependencies
 COPY ["./package.json", "./shrinkwrap.yaml", "/usr/src/app/"]
 
-RUN npx pnpm install
+RUN npx pnpm install --unsafe-perm
 
 ## Add source code
 COPY ["./src", "./tsconfig.json", "/usr/src/app/"]
