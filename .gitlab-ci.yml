@@ -8,7 +8,7 @@ lint:
   stage: test
   script:
     - install_dependencies
-    - npx pnpm run lint
+    - npm run lint
   cache:
     paths:
       - node_modules
@@ -26,7 +26,7 @@ build:
 
 .devops: &devops |
   function install_dependencies () {
-    npx pnpm install
+    npm install
   }
 
   function build () {
