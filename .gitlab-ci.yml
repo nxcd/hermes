@@ -30,7 +30,7 @@ build:
   }
 
   function build () {
-    docker build -t $(version) -t $(version latest) .
+    docker build -t $(version) -t $(version latest) -t latest .
   }
 
   function version () {
