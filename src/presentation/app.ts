@@ -8,7 +8,7 @@ import { DeepStreamRepository } from '../data/repositories/DeepStreamRepository'
 import { DeepStream } from '../data/connections/DeepStream'
 
 export const app = expresso(async (app: Express, config: any) => {
-  const deepStreamConnection = new DeepStream(config.deepStream.url).connect()
+  const deepStreamConnection = new DeepStream(config.deepStream).connect()
 
   const socketRepository = new DeepStreamRepository(deepStreamConnection)
   const socketService = new SocketService(socketRepository)
