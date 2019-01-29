@@ -4,7 +4,7 @@ ENV NODE_ENV production
 
 RUN npm i -g pnpm --unsafe-perm
 
-COPY package.json package-lock.json /tmp/app/
+COPY package.json shrinkwrap.yaml /tmp/app/
 RUN cd /tmp/app \
   && pnpm install --only prod
 
