@@ -24,7 +24,7 @@ export class DeepStream {
     ds.login({
       username: this.user,
       password: this.pass
-    }, (success: boolean, data: any) => console.log(success, data))
+    })
     return ds
   }
 }
