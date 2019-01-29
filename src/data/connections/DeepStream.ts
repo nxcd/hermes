@@ -15,6 +15,12 @@ export class DeepStream {
 
   connect () {
     const ds = deepStreamClient(this.url)
+
+    if (!this.user || !this.pass) {
+      ds.login()
+      return ds
+    }
+
     ds.login({
       username: this.user,
       password: this.pass
