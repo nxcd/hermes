@@ -10,7 +10,6 @@ export class DeepStream {
     this.url = options.url
     this.user = options.user
     this.pass = options.pass
-    console.log(options)
   }
 
   connect () {
