@@ -30,11 +30,15 @@ build:
   }
 
   function build () {
-    docker build -t $(version) -t $(version latest) -t latest .
+    docker build -t $(version) -t $(version latest) -t $(version_latest) .
   }
 
   function version () {
     echo "$(docker_registry)/hermes:$(version_tag $1)"
+  }
+
+  function version_latest () {
+    echo "$(docker_registry)/hermes:latest"
   }
 
   function docker_registry () {
