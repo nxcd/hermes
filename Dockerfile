@@ -24,7 +24,8 @@ RUN rm -rf /usr/src/app/node_modules
 COPY --from=builder /tmp/app/package.json /tmp/app/shrinkwrap.yaml /usr/src/app/
 COPY --from=builder /tmp/app/dist /usr/src/app/dist
 
-RUN npx pnpm i --unsafe-perm
+RUN npm i -g pnpm --unsafe-perm
+RUN pnpm i
 
 EXPOSE 3000
 
