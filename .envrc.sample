@@ -1,3 +1,4 @@
 export DEEPSTREAM_URL=ws://localhost:6020/deepstream
 export DEEPSTREAM_USER=
 export DEEPSTREAM_PASSWORD=
+export NODE_TLS_REJECT_UNAUTHORIZED=0

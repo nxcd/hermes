@@ -13,7 +13,18 @@ export class DeepStream {
   }
 
   connect () {
-    const ds = deepStreamClient(this.url)
+    const options = {
+      // Reconnect after 1, 2, 3 seconds
+      reconnectIntervalIncrement: 1000,
+      // Try reconnecting every three seconds
+      maxReconnectInterval: 3000,
+      // We never want to stop trying to reconnect
+      maxReconnectAttempts: 5,
+      // Send heartbeats only once a minute
+      heartbeatInterval: 10000
+    }
+    const ds = deepStreamClient(this.url, options)
+    ds.on('error', console.error)
 
     if (!this.user || !this.pass) {
       ds.login()
