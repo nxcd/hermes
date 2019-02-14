@@ -19,9 +19,7 @@ export class DeepStream {
       // Try reconnecting every three seconds
       maxReconnectInterval: 3000,
       // We never want to stop trying to reconnect
-      maxReconnectAttempts: 5,
-      // Send heartbeats only once a minute
-      heartbeatInterval: 10000
+      maxReconnectAttempts: 5
     }
     const ds = deepStreamClient(this.url, options)
     ds.on('error', console.error)
