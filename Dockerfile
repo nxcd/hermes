@@ -2,13 +2,11 @@ FROM node:10-alpine AS builder
 
 WORKDIR /tmp/app
 
-RUN npm i -g pnpm --unsafe-perm
-
-COPY package.json shrinkwrap.yaml tsconfig.json tslint.json /tmp/app/
+COPY package.json package-lock.json tsconfig.json tslint.json /tmp/app/
 COPY src/ /tmp/app/src
 
-RUN pnpm install
-RUN pnpm run build:clean
+RUN npm install
+RUN npm run build:clean
 
 ################################################################################
 
