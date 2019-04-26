@@ -19,11 +19,10 @@ WORKDIR /usr/src/app
 
 RUN rm -rf /usr/src/app/node_modules
 
-COPY --from=builder /tmp/app/package.json /tmp/app/shrinkwrap.yaml /usr/src/app/
+COPY --from=builder /tmp/app/package.json /tmp/app/package-lock.json /usr/src/app/
 COPY --from=builder /tmp/app/dist /usr/src/app/dist
 
-RUN npm i -g pnpm --unsafe-perm
-RUN pnpm i
+RUN npm i
 
 EXPOSE 3000
 
